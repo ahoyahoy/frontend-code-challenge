@@ -1,0 +1,48 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "types:generate": "apollo client:codegen --target typescript --excludes=node_modules/* --excludes=data/_generated/* --includes=data/**/*.ts --endpoint http://localhost:4000/graphql --tagName=gql --outputFlat data/_generated --passthroughCustomScalars",
+    "types:generate-watch": "apollo client:codegen --target typescript --excludes=node_modules/* --excludes=data/_generated/* --includes=data/**/*.ts --endpoint http://localhost:4000/graphql --tagName=gql --outputFlat data/_generated --passthroughCustomScalars --watch",
+    "schema:download": "apollo schema:download --endpoint http://localhost:4000/graphql ./data/schema.json"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.4.16",
+    "@apollo/react-hooks": "^4.0.0",
+    "@carbon/icons-react": "^10.41.0",
+    "apollo": "^2.33.6",
+    "carbon-components": "^10.45.0",
+    "carbon-components-react": "^7.45.0",
+    "carbon-icons": "^7.0.7",
+    "classnames": "^2.3.1",
+    "lodash": "^4.17.21",
+    "lodash.debounce": "^4.0.8",
+    "next": "11.1.2",
+    "node-sass": "5.0.0",
+    "react": "^17.0.2",
+    "react-dom": "17.0.2",
+    "react-flip-toolkit": "^7.0.13",
+    "react-hook-inview": "^4.3.11",
+    "react-intersection-observer": "^8.32.1",
+    "typescript-plugin-css-modules": "^3.4.0",
+    "use-debounce": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "17.0.29",
+    "@types/carbon-components": "^10.27.1",
+    "@types/carbon-components-react": "^7.44.1",
+    "@types/carbon__icons-react": "^10.31.2",
+    "@types/react-lazy-load-image-component": "^1.5.2",
+    "eslint": "8.0.0",
+    "eslint-config-next": "11.1.2",
+    "typescript": "4.4.4"
+  }
+}

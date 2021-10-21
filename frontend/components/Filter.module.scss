@@ -1,0 +1,104 @@
+.filter {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: white;
+    box-shadow: 0 2px 3px #00000040;
+    padding: 10px;
+}
+
+.switch {
+    button {
+        text-align: center;
+        border-radius: 0;
+        justify-content: center;
+        border-color: #71c1a1 !important;
+        color: #71c1a1;
+        background: white;
+        font-size: 16px;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+
+        &:hover {
+            background: #71c1a120;
+            color: #71c1a1;
+        }
+
+    }
+
+    button[aria-selected="true"] {
+        background: #71c1a1;
+        color: white;
+    }
+}
+
+.filter-controls {
+    display: flex;
+    padding-top: 10px;
+}
+
+.layout-switch {
+    display: flex;
+    margin-left: 10px;
+}
+
+.icon-rows {
+    padding-top: 9px;
+    padding-right: 2px;
+    border-right: 1px solid #eeeeee;
+
+    div {
+        height: 3px;
+        margin: 2px;
+    }
+}
+
+.icon-cards {
+    padding-top: 11px;
+    padding-left: 5px;
+    
+
+    div {
+        display: inline-block;
+        height: 8px;
+        width: 6px;
+        margin-bottom: 1px;
+        margin-right: 1px;
+    }
+}
+
+.icon-rows, .icon-cards {
+    display: block;
+    width: 26px;
+    height: 40px;
+    line-height: 0;
+    cursor: pointer;
+
+    div {
+        background: #71c1a1;
+    }
+
+    &:hover {
+        div {
+            background: #4aa781;
+        }
+    }
+}
+
+.search-text {
+    background: #eee;
+    border: none;
+    outline: none !important;
+    margin-right: 10px;
+}
+
+.types-select {
+    background: #eee;
+    border: none;
+    width: 200px;
+    
+    * {
+        outline: none !important;
+        box-shadow: none !important;
+    }
+}

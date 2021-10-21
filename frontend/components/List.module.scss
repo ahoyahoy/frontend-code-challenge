@@ -1,0 +1,23 @@
+.flipper {
+    width: 687px;
+    background: white;
+    overflow-y: scroll;
+    margin: auto;
+    height: 100vh;
+}
+
+.list {
+    padding-top: 15px;
+    padding-left: 10px;
+    
+    a {
+        display: inline-block;
+        //opacity: 0;
+    }
+
+    &.show-rows {
+        a {
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,135 @@
+.detail-card {
+    border: 1px solid #cccccc;
+    background: white;
+    height: 660px;
+
+    .img {
+        height: 422px;
+        text-align: center;
+        padding: 10px;
+        position: relative;
+
+        img {
+            width: 402px;
+            height: 402px;
+            object-fit: contain;
+        }
+    }
+    .header {
+        background: #f3f3f3;
+        padding: 10px;
+        font-size: 16px;
+        height: 145px;
+
+        h1 {
+            font-size: 22px;
+            font-weight: 800;
+            line-height: 34px;
+        }
+
+        
+    }
+
+    .stat {
+        display: flex;
+        padding-top: 13px;
+
+        .lines {
+            flex: 1;
+
+            .line {
+                height: 10px;
+                border-radius: 10px;
+                margin-right: 10px;
+                margin-bottom: 18px;
+
+                .fill {
+                    height: 100%;
+                    width: 0;
+                }
+
+                &.cp {
+                    border: 1px solid #9e9ffe;
+
+                    .fill {
+                        background: #9e9ffe;
+                    }
+                }
+
+                &.hp {
+                    border: 1px solid #71c1a1;
+
+                    .fill {
+                        background:#71c1a1;
+                    }
+                }
+                
+                
+            }
+        }
+
+        .nums {
+            font-weight: bold;
+            font-size: 17px;
+
+            & > div {
+                margin-top: -3px;
+                margin-bottom: 12px;
+            }
+        }
+    }
+
+    .stat2 {
+        display: flex;
+        border-top: 1px solid #cccccc;
+        background: #f3f3f3;
+        height: 91px;
+
+        & > div {
+            padding: 22px;
+            text-align: center;
+            flex: 1;
+            font-size: 16px;
+
+            &:first-child {
+                border-right: 1px solid #cccccc;
+            }
+
+            strong {
+                font-size: 18px;
+                font-weight: bold;
+                margin-bottom: 12px;
+                display: block;
+            }
+        }
+    }
+
+}
+
+.evolutions {
+    padding-top: 15px;
+    animation: evolutionsFadeIn .8s forwards;
+
+    h4 {
+        font-weight: bold;
+    }
+
+    & > div {
+        padding: 8px 0px;
+    }
+}
+
+
+@keyframes evolutionsFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    60% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+    }
+}

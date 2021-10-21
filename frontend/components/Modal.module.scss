@@ -1,0 +1,29 @@
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 50;
+    
+
+    .container {
+        width: 687px;
+        margin: auto;
+        height: 100vh;
+        overflow-y: auto;
+        padding: 10px;
+        background: rgba(255, 255, 255, 0);
+        animation: fadeIn .4s normal forwards ease-in-out;
+    }
+}
+
+
+@keyframes fadeIn {
+    0% {
+        background: rgba(255, 255, 255, 0);
+    }
+    100% {
+        background: rgba(255, 255, 255, 1);
+    }
+}
