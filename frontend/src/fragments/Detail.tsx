@@ -1,4 +1,4 @@
-import { Flipped, spring } from 'react-flip-toolkit'
+import { Flipped } from 'react-flip-toolkit'
 import classNames from 'classnames/bind'
 import { useRouter } from 'next/router'
 
@@ -35,7 +35,15 @@ const DetailFragment = (): JSX.Element => {
                         showRows={false}
                     />
                 </div>
-                : <div></div>
+                : <></>
+            }
+            { loading 
+                ? <div>Loading...</div>
+                : <></>
+            }
+            { error 
+                ? <div>Error...</div>
+                : <></>
             }
         </Modal>
     </>

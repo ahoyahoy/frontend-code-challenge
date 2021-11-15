@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useCallback } from 'react'
-import { Flipper, Flipped, spring } from 'react-flip-toolkit'
+import React, { useEffect, useState } from 'react'
+import { Flipper } from 'react-flip-toolkit'
 import { useRouter } from 'next/router'
 import { useInView } from 'react-hook-inview'
 import classNames from 'classnames/bind'
@@ -63,22 +63,39 @@ const MainFragment = (): JSX.Element => {
             flipKey={selectedPokemon}
             className={cx('flipper')}
         >
-            <Filter onChangeFilter={setFilterValues} onChangeShowRows={setShowRows} types={types || []} />
+            <div className={cx('content')}>
+                <Filter
+                    onChangeFilter={setFilterValues}
+                    onChangeShowRows={setShowRows}
+                    types={types || []}
+                    typesLoading={typesLoading}
+                />
 
-            <List
-                data={
-                    filter.favorite
-                        ? lastLoadedItems.filter(i => i.isFavorite)
-                        : lastLoadedItems
+                <List
+                    data={
+                        filter.favorite
+                            ? lastLoadedItems.filter(i => i.isFavorite)
+                            : lastLoadedItems
+                    }
+                    showRows={showRows}
+                    onFav={(id, state) => favoritePokemon({ id, state })}
+                />
+
+                
+                { loading 
+                    ? <div>Loading...</div>
+                    : <></>
                 }
-                showRows={showRows}
-                onFav={(id, state) => favoritePokemon({ id, state })}
-            />
+                { error 
+                    ? <div>Error...</div>
+                    : <></>
+                }
 
-            {lastLoadedItems && !(lastLoadedItems.length % 12)
-                && <div ref={ref} style={{ height: '200px', marginBottom: '200px' }}></div>}
+                {lastLoadedItems && !(lastLoadedItems.length % 12)
+                    && <div ref={ref} style={{ height: '200px', marginBottom: '200px' }}></div>}
 
-            {selectedPokemon && <DetailFragment />}
+                {selectedPokemon && <DetailFragment />}
+            </div>
         </Flipper>
     </>
 }

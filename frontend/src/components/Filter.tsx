@@ -8,13 +8,14 @@ import styles from './Filter.module.scss'
 
 interface FilterProps {
     types: string[],
+    typesLoading?: boolean,
     onChangeFilter: any,
     onChangeShowRows: (v: boolean) => void
 }
 
 const cx = classNames.bind(styles)
 
-export default function Filter({ types, onChangeFilter, onChangeShowRows }: FilterProps) {
+export default function Filter({ types, typesLoading, onChangeFilter, onChangeShowRows }: FilterProps) {
     const [isFavorite, setIsFavorite] = useState(false)
     const [showRows, setShowRows] = useState(false)
     const [type, setType] = useState<string>('')
@@ -56,6 +57,7 @@ export default function Filter({ types, onChangeFilter, onChangeShowRows }: Filt
                     itemToString={(item) => (item ? item.text : '')}
                     onChange={(i) => setType(i.selectedItem?.id || '')}
                     className={cx('types-select')}
+                    disabled={typesLoading}
                 />
                 <div className={cx('layout-switch')}>
                     <div className={cx('icon-rows')} onClick={() => { setShowRows(true) }}>

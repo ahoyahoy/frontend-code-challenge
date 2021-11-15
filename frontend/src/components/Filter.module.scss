@@ -88,14 +88,21 @@
 .search-text {
     background: #eee;
     border: none;
-    outline: none !important;
     margin-right: 10px;
+
+    &:active, &:focus {
+        outline: none;
+    }
 }
 
 .types-select {
     background: #eee;
     border: none;
     width: 200px;
+
+    .bx--list-box__menu-icon {
+        right: 10px;
+    }
     
     * {
         outline: none !important;

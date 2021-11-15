@@ -1,0 +1,15 @@
+$feature-flags: (
+  enable-css-custom-properties: true,
+);
+
+:root {
+    --cds-field-01: #eee;
+}
+
+@import '@carbon/themes/scss/themes';
+
+@include carbon--theme();
+
+@import 'carbon-components/scss/globals/scss/styles.scss';
+
+@import 'main.scss';

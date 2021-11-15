@@ -1,9 +1,12 @@
 .flipper {
-    width: 687px;
-    background: white;
     overflow-y: scroll;
-    margin: auto;
     height: 100vh;
+}
+
+.content {
+    width: 687px;
+    margin: auto;
+    background: white;
 }
 
 .list {

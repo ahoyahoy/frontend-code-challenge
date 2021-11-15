@@ -2,7 +2,6 @@ import { gql } from '@apollo/client'
 import { FavoritePokemon, FavoritePokemonVariables } from '../_generated/FavoritePokemon'
 import { UnFavoritePokemon } from '../_generated/UnFavoritePokemon'
 import { getApolloClient } from '../../apollo-client'
-import { QUERY } from './list'
 
 export const MUTATION_FAV = gql`
 mutation FavoritePokemon($id: ID!) {
